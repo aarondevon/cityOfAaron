@@ -7,6 +7,7 @@
 package cityofaaron;
 
 import model.Player;
+import model.TeamMember;
 
 /**
  *
@@ -22,9 +23,10 @@ public class CityOfAaron {
         Player playerOne = new Player();
         
         playerOne.setName("Carly");
-        String playerOneName = playerOne.getName();
         
-        System.out.println("Name = " + playerOneName);
+        System.out.println("Name = " + playerOne.getName());
+        
+        System.out.println("Name: " +TeamMember.Sister.getName() + "\nTitle: " + TeamMember.Sister.getTitle());
     }
     
 }
