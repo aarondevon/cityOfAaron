@@ -13,6 +13,10 @@ import java.io.Serializable;
 public class Location implements Serializable {
     private String description;
     private String symbol;
+    
+    public Location(){
+        
+    }
 
     public String getDescription() {
         return description;
