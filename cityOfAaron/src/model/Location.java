@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author carlykjelstrom
  */
-public class Location {
+public class Location implements Serializable {
     private String description;
     private String symbol;
 
