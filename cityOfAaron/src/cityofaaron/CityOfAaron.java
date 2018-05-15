@@ -6,6 +6,8 @@
  */
 package cityofaaron;
 
+import model.Player;
+
 /**
  *
  * @author awesome
@@ -17,6 +19,12 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Carly");
+        String playerOneName = playerOne.getName();
+        
+        System.out.println("Name = " + playerOneName);
     }
     
 }
