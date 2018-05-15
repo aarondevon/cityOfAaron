@@ -8,6 +8,8 @@ package cityofaaron;
 
 import model.Player;
 import model.TeamMember;
+import model.Location;
+import model.ListItem;
 
 /**
  *
@@ -27,6 +29,18 @@ public class CityOfAaron {
         System.out.println("Name = " + playerOne.getName());
         
         System.out.println("Name: " +TeamMember.Sister.getName() + "\nTitle: " + TeamMember.Sister.getTitle());
+    
+        Location locationOne = new Location();
+        
+        locationOne.setSymbol("Star");
+        
+        System.out.println("Symbol = " + locationOne.getSymbol());
+        
+        ListItem listItemOne = new ListItem();
+        
+        listItemOne.setName("Aaron");
+        
+        System.out.println("Name = " + listItemOne.getName());
     }
     
 }
