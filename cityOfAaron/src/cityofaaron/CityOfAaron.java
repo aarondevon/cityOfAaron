@@ -10,6 +10,7 @@ import model.Player;
 import model.TeamMember;
 import model.Location;
 import model.ListItem;
+import model.CropData;
 
 /**
  *
@@ -41,6 +42,11 @@ public class CityOfAaron {
         listItemOne.setName("Aaron");
         
         System.out.println("Name = " + listItemOne.getName());
+        
+        CropData cropDataOne = new CropData();
+        
+        cropDataOne.setAcresOwned(10000);
+        System.out.println("You own " + cropDataOne.getAcresOwned() + " acres!");
     }
     
 }
