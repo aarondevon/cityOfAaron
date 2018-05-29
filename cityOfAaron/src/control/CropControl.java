@@ -29,7 +29,18 @@ public class CropControl {
         return cropData.getAcresOwned();
    }
    
-   public static int plantCrops() {
-       
+   public static int plantCrops(int acresToPlant, CropData cropData) {
+    if (acresToPlant < 0) {
+        return -1;
+    }
+    if (cropData.getAcresOwned() < acresToPlant) {
+        return -1;
+    }
+    if (cropData.getWheatInStore() < acresToPlant / 2) {
+        return -1;
+    }
+    
+    cropData.setWheatInStore(cropData.getWheatInStore() - acresToPlant / 2);
+    return cropData.getWheatInStore();
    }
 }
