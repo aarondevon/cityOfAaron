@@ -43,4 +43,15 @@ public class CropControl {
     cropData.setWheatInStore(cropData.getWheatInStore() - acresToPlant / 2);
     return cropData.getWheatInStore();
    }
+   
+   public static int setOffering(int offering, CropData cropData) {
+       if(offering < 0) {
+           return -1;
+       }
+       if(offering > 100) {
+           return -1;
+       }
+       cropData.setOffering(offering);
+       return offering;
+   }
 }
