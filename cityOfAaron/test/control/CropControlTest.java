@@ -33,7 +33,7 @@ public class CropControlTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
         
-        System.out.println("\tTest case 1");
+        System.out.println("\tbuyLand Test case 1");
         CropData cropData = new CropData();
         cropData.setPopulation(200);
         cropData.setAcresOwned(1050);
@@ -45,7 +45,7 @@ public class CropControlTest {
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result, 0.0001);
         
-        System.out.println("\tTest case 2");
+        System.out.println("\tbuyLand Test case 2");
         // CropData cropData = new CropData();
         cropData.setPopulation(200);
         cropData.setAcresOwned(1000);
@@ -57,7 +57,7 @@ public class CropControlTest {
         result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result, 0.0001);
         
-        System.out.println("\tTest case 3");
+        System.out.println("\tbuyLand Test case 3");
         //CropData cropData = new CropData();
         cropData.setPopulation(42);
         cropData.setAcresOwned(682);
@@ -68,6 +68,50 @@ public class CropControlTest {
         expResult = -1;
         result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result, 0.0001);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of plantCrops method, of class CropControl.
+     */
+    @Test
+    public void testPlantCrops() {
+//        System.out.println("plantCrops");
+//        int acresToPlant = 0;
+//        CropData cropData = null;
+//        int expResult = 0;
+//        int result = CropControl.plantCrops(acresToPlant, cropData);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+        
+        System.out.println("\tplantCrops Test case 1");
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(750);
+        cropData.setWheatInStore(500);
+        int acresToPlant = 130;
+        int expResult = 435;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tplantCrops Test case 2");
+        //CropData cropData = new CropData();
+        cropData.setAcresOwned(300);
+        cropData.setWheatInStore(400);
+        acresToPlant = 250;
+        expResult = 275;
+        result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tplantCrops Test case 3");
+        //CropData cropData = new CropData();
+        cropData.setAcresOwned(50);
+        cropData.setWheatInStore(700);
+        acresToPlant = 400;
+        expResult = -1;
+        result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
