@@ -12,20 +12,24 @@ import model.CropData;
  */
 public class CropControl {
     
-   public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-       if (acresToBuy < 0) {
-           return -1;
-       }
-       if (cropData.getWheatInStore() < acresToBuy * landPrice) {
-           return -1;
-       }
-       if (acresToBuy + cropData.getAcresOwned() > cropData.getPopulation() * 10) {
-           return -1;
-       }
+    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
+        if (acresToBuy < 0) {
+            return -1;
+        }
+        if (cropData.getWheatInStore() < acresToBuy * landPrice) {
+            return -1;
+        }
+        if (acresToBuy + cropData.getAcresOwned() > cropData.getPopulation() * 10) {
+            return -1;
+        }
        
-       cropData.setWheatInStore(cropData.getWheatInStore() - (acresToBuy * landPrice));
-       cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
+        cropData.setWheatInStore(cropData.getWheatInStore() - (acresToBuy * landPrice));
+        cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
        
-       return cropData.getAcresOwned();
-   } 
+        return cropData.getAcresOwned();
+   }
+   
+   public static int plantCrops() {
+       
+   }
 }
