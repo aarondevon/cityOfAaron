@@ -8,6 +8,10 @@ package control;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import model.CropData;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -16,6 +20,22 @@ import model.CropData;
 public class CropControlTest {
     
     public CropControlTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -168,8 +188,55 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
 
-       
+    /**
+     * Test of feedPeople method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople() {
+//        System.out.println("feedPeople");
+//        int wheatInStore = 0;
+//        int bushelsGiven = 0;
+//        CropData cropData = new CropData();
+//        int expResult = 0;
+//        int result = CropControl.feedPeople(wheatInStore, bushelsGiven, cropData);
+//        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        System.out.println("\tfeedPeople Test case 1");
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(500);
+        int bushelsGiven = 155;
+        int expResult = 345;
+        int result = CropControl.feedPeople(bushelsGiven, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tfeedPeople Test case 2");
+        //CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        bushelsGiven = 500;
+        expResult = 500;
+        result = CropControl.feedPeople(bushelsGiven, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tfeedPeople Test case 3");
+        //CropData cropData = new CropData();
+        cropData.setWheatInStore(4000);
+        bushelsGiven = 100;
+        expResult = 3900;
+        result = CropControl.feedPeople(bushelsGiven, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tfeedPeople Test case 4");
+        //CropData cropData = new CropData();
+        cropData.setWheatInStore(235);
+        bushelsGiven = 400;
+        expResult = -1;
+        result = CropControl.feedPeople(bushelsGiven, cropData);
+        assertEquals(expResult, result);
+    }
+
+ 
     
 }
