@@ -54,4 +54,16 @@ public class CropControl {
        cropData.setOffering(offering);
        return offering;
    }
+   
+   public static int feedPeople(int bushelsGiven, CropData cropData) {
+       if(bushelsGiven < 0) {
+           return -1;
+       }
+       if(bushelsGiven > cropData.getWheatInStore()) {
+           return -1;
+       }
+       
+       cropData.setWheatInStore(cropData.getWheatInStore() - bushelsGiven);
+       return cropData.getWheatInStore();
+   }
 }
