@@ -29,20 +29,34 @@ public class CropControl {
         return cropData.getAcresOwned();
    }
     
+    // sellLandmethod
+    // Purpose: Sell land -subtracts from the acres owned
+    // Parameters: the price of land, the number of acres to sell, and
+    // a reference to a CropDataobject
+    // Pre-conditions: acresToSell>= 0 and acresToSell<= acresOwned
+    // Returns: the number of acres owned after the sale
    public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
        int acresOwned = cropData.getAcresOwned();
        int wheatInStore = cropData.getWheatInStore();
        
+       //if acresToSell< 0, return -1
        if(acresToSell < 0) {
            return -1;
        }
+       //if acresToSell> acresOwned, return -1
        if(acresToSell > acresOwned) {
            return -1;
        }
        
+       //acresOwned= acresOwned-acresToSell
+       acresOwned -= acresToSell;
+       cropData.setAcresOwned(acresOwned);
+       
+       //wheatInStore= wheatInStore+ acresToSell* landPrice
        wheatInStore -= acresToSell * landPrice;
        cropData.setWheatInStore(wheatInStore);
        
+       //return acresOwned
        return acresOwned;
    }
    
