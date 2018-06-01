@@ -120,17 +120,26 @@ public class CropControl {
         return offering;
     }
 
+    //Purpose: Receive input from user on how much wheat to set aside for feeding people
+    // Parameters: number of bushels entered by user, reference to CropData object
+    // Pre-conditions: number entered must be greater than or equal to zero, number entered must less than wheat in storage
+    // Return: wheat left in store
+    // Storage: store the number of bushels set aside to feed people
     public static int feedPeople(int bushelsGiven, CropData cropData) {
+        // IF bushelsGiven < 0, return -1
         if(bushelsGiven < 0) {
             return -1;
         }
+        // IF bushelsGiven > wheatInStore, return -1
         if(bushelsGiven > cropData.getWheatInStore()) {
             return -1;
         }
-        
+        // store amount of bushels set aside
         cropData.setWheatForPeople(bushelsGiven);
         
+        // wheatInStore = wheatInStore - bushelsGiven
         cropData.setWheatInStore(cropData.getWheatInStore() - bushelsGiven);
+        // return wheatInStore
         return cropData.getWheatInStore();
     }
 }
