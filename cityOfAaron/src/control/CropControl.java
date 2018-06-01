@@ -28,6 +28,23 @@ public class CropControl {
        
         return cropData.getAcresOwned();
    }
+    
+   public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
+       int acresOwned = cropData.getAcresOwned();
+       int wheatInStore = cropData.getWheatInStore();
+       
+       if(acresToSell < 0) {
+           return -1;
+       }
+       if(acresToSell > acresOwned) {
+           return -1;
+       }
+       
+       wheatInStore -= acresToSell * landPrice;
+       cropData.setWheatInStore(wheatInStore);
+       
+       return acresOwned;
+   }
    
    public static int plantCrops(int acresToPlant, CropData cropData) {
     if (acresToPlant < 0) {
