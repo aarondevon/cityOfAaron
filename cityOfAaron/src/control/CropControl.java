@@ -127,7 +127,9 @@ public class CropControl {
         if(bushelsGiven > cropData.getWheatInStore()) {
             return -1;
         }
-
+        
+        cropData.setWheatForPeople(bushelsGiven);
+        
         cropData.setWheatInStore(cropData.getWheatInStore() - bushelsGiven);
         return cropData.getWheatInStore();
     }
