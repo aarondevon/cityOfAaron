@@ -91,6 +91,68 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of sellLand method, of class CropControl.
+     */
+    @Test
+    public void testSellLand() {
+//        System.out.println("sellLand");
+//        int landPrice = 0;
+//        int acresToSell = 0;
+//        CropData cropData = null;
+//        int expResult = 0;
+//        int result = CropControl.sellLand(landPrice, acresToSell, cropData);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+        
+        System.out.println("\tsellLand Test case 1");
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        cropData.setAcresOwned(2800);
+        int landPrice = 15;
+        int acresToSell = 10;
+        int expResult = 2790;
+        int result = CropControl.sellLand(landPrice, acresToSell, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tsellLand Test case 2");
+        cropData.setWheatInStore(1000);
+        cropData.setAcresOwned(2800);
+        landPrice = 20;
+        acresToSell = -5;
+        expResult = -1;
+        result = CropControl.sellLand(landPrice, acresToSell, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tsellLand Test case 3");
+        cropData.setWheatInStore(1000);
+        cropData.setAcresOwned(2800);
+        landPrice = 20;
+        acresToSell = 3000;
+        expResult = -1;
+        result = CropControl.sellLand(landPrice, acresToSell, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tsellLand Test case 4");
+        cropData.setWheatInStore(1000);
+        cropData.setAcresOwned(2000);
+        landPrice = 10;
+        acresToSell = 2000;
+        expResult = 0;
+        result = CropControl.sellLand(landPrice, acresToSell, cropData);
+        assertEquals(expResult, result);
+        
+        System.out.println("\tsellLand Test case 5");
+        cropData.setWheatInStore(1000);
+        cropData.setAcresOwned(2000);
+        landPrice = 10;
+        acresToSell = 0;
+        expResult = 2000;
+        result = CropControl.sellLand(landPrice, acresToSell, cropData);
+        assertEquals(expResult, result);   
+    }
 
     /**
      * Test of plantCrops method, of class CropControl.
@@ -236,7 +298,4 @@ public class CropControlTest {
         result = CropControl.feedPeople(bushelsGiven, cropData);
         assertEquals(expResult, result);
     }
-
- 
-    
 }
