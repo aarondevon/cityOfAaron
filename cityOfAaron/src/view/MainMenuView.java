@@ -7,7 +7,7 @@ package view;
 
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
-import model.Player;
+import model.*;
 
 /**
  *
@@ -122,9 +122,26 @@ public class MainMenuView {
         * Returns: none
         */
         // ===================================
-        public void startNewGame()
-        {
-        System.out.println("Start new game option selected.");
+        public void startNewGame() {
+        //Create a new Game object.
+        Game theGame = new Game();
+        // Save a reference to it in the GameProject class.
+        CityOfAaron.setTheGame(theGame);
+        // Display the Banner Page.
+        System.out.println("Welcome to the city of Aaron.");
+        // Create a new Player object
+        Player thePlayer = new Player();
+        // Prompt for and get the user’s name.
+        String name;
+        System.out.println("Please type in your first name: ");
+        name = keyboard.next();
+        // Save the user’s name in the Player object
+        thePlayer.setName(name);
+        // Save a reference to the player object in the Game object
+        theGame.setThePlayer(thePlayer);
+        // Display a welcome message
+        System.out.println("Welcome " + name + " have fun.");
+        // Display the Game menu
         }
         
         /**
@@ -134,8 +151,7 @@ public class MainMenuView {
         * Returns: none
         */
         // ===================================
-        public void startSavedGame()
-        {
+        public void startSavedGame() {
         System.out.println("Start saved game option selected.");
         }
         
@@ -146,8 +162,7 @@ public class MainMenuView {
         * Returns: none
         */
         // ===================================
-        public void displayHelpMenuView()
-        {
+        public void displayHelpMenuView() {
         System.out.println("Displaying help menu.");
         }
         
@@ -158,8 +173,7 @@ public class MainMenuView {
         * Returns: none
         */
         // ===================================
-        public void displaySaveGameView()
-        {
+        public void displaySaveGameView() {
         System.out.println("display save game view.");
         }
 }
