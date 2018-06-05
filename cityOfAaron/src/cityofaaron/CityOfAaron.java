@@ -6,11 +6,12 @@
  */
 package cityofaaron;
 
-import model.Player;
-import model.TeamMember;
-import model.Location;
-import model.ListItem;
-import model.CropData;
+//import model.Player;
+//import model.TeamMember;
+//import model.Location;
+//import model.ListItem;
+//import model.CropData;
+import view.*;
 
 /**
  *
@@ -23,30 +24,34 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Player playerOne = new Player();
+//        Player playerOne = new Player();
+//        
+//        playerOne.setName("Carly");
+//        
+//        System.out.println("Name = " + playerOne.getName());
+//        
+//        System.out.println("Name: " +TeamMember.Sister.getName() + "\nTitle: " + TeamMember.Sister.getTitle());
+//    
+//        Location locationOne = new Location();
+//        
+//        locationOne.setSymbol("Star");
+//        
+//        System.out.println("Symbol = " + locationOne.getSymbol());
+//        
+//        ListItem listItemOne = new ListItem();
+//        
+//        listItemOne.setName("Aaron");
+//        
+//        System.out.println("Name = " + listItemOne.getName());
+//        
+//        CropData cropDataOne = new CropData();
+//        
+//        cropDataOne.setAcresOwned(10000);
+//        System.out.println("You own " + cropDataOne.getAcresOwned() + " acres!");
         
-        playerOne.setName("Carly");
-        
-        System.out.println("Name = " + playerOne.getName());
-        
-        System.out.println("Name: " +TeamMember.Sister.getName() + "\nTitle: " + TeamMember.Sister.getTitle());
-    
-        Location locationOne = new Location();
-        
-        locationOne.setSymbol("Star");
-        
-        System.out.println("Symbol = " + locationOne.getSymbol());
-        
-        ListItem listItemOne = new ListItem();
-        
-        listItemOne.setName("Aaron");
-        
-        System.out.println("Name = " + listItemOne.getName());
-        
-        CropData cropDataOne = new CropData();
-        
-        cropDataOne.setAcresOwned(10000);
-        System.out.println("You own " + cropDataOne.getAcresOwned() + " acres!");
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+
     }
     
 }

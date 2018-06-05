@@ -19,30 +19,6 @@ public class MainMenuView {
     private int max;
     
     /**
-    * The displayMenuView method
-    * Purpose: displays the menu, gets the user's input, and does the
-    * selected action
-    * Parameters: none
-    * Returns: none
-    */
-    // =========================================================
-        public void displayMenuView() {
-            int menuOption;
-            do {
-            // Display the menu
-            System.out.println(mainMenu);
-            
-            // Prompt the user and get the user’s input
-            menuOption = getMenuOption();
-            
-            // Perform the desired action
-            doAction(menuOption);
-            
-            // Determine and display the next view
-            } while (menuOption != max);
-        }
-        
-        /**
         * The MainMenuView constructor
         * Purpose: Initialize the menu data
         * Parameters: none
@@ -60,6 +36,30 @@ public class MainMenuView {
             " 4 - Save game\n" +
             " 5 - Quit\n";
         max = 5;
+        }
+    
+    /**
+    * The displayMenuView method
+    * Purpose: displays the menu, gets the user's input, and does the
+    * selected action
+    * Parameters: none
+    * Returns: none
+    */
+    // =========================================================
+        public void displayMenuView() {
+            int menuOption;
+            do {
+            // Display the menu
+            System.out.println(theMenu);
+            
+            // Prompt the user and get the user’s input
+            menuOption = getMenuOption();
+            
+            // Perform the desired action
+            doAction(menuOption);
+            
+            // Determine and display the next view
+            } while (menuOption != max);
         }
         
         /**
@@ -101,13 +101,13 @@ public class MainMenuView {
                     startNewGame();
                     break;
                 case 2: // if the option is 2, call startExistingGame( )
-                    starSavedGame();
+                    startSavedGame();
                     break;
                 case 3: // if the option is 3, call displayHelpMenu( )
                     displayHelpMenuView();
                     break;
                 case 4: // if the option is 4, call displaySaveGame( )
-                    displaySvaedGameView();
+                    displaySaveGameView();
                     break;
                 case 5:
                     System.out.println("Thanks for playing ... goodbye.");
