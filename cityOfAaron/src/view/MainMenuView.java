@@ -88,5 +88,78 @@ public class MainMenuView {
             return userInput;
         } 
         
-        // PAGE 48
+        /**
+        *The doAction method
+        * Purpose: performs the selected action
+        * Parameters: none
+        * Returns: none
+        */
+        // =================================== 
+        public void doAction(int option) {
+            switch (option) {
+                case 1: // if the option is 1, call startNewGame( )
+                    startNewGame();
+                    break;
+                case 2: // if the option is 2, call startExistingGame( )
+                    starSavedGame();
+                    break;
+                case 3: // if the option is 3, call displayHelpMenu( )
+                    displayHelpMenuView();
+                    break;
+                case 4: // if the option is 4, call displaySaveGame( )
+                    displaySvaedGameView();
+                    break;
+                case 5:
+                    System.out.println("Thanks for playing ... goodbye.");
+                // if the option is 5, display a goodbye message
+            }
+        }
+        
+        /**
+        * The startNewGame method
+        * Purpose: creates game object and starts the game
+        * Parameters: none
+        * Returns: none
+        */
+        // ===================================
+        public void startNewGame()
+        {
+        System.out.println("Start new game option selected.");
+        }
+        
+        /**
+        * The startSavedGame method
+        * Purpose: creates game object and starts a saved game
+        * Parameters: none
+        * Returns: none
+        */
+        // ===================================
+        public void startSavedGame()
+        {
+        System.out.println("Start saved game option selected.");
+        }
+        
+        /**
+        * The displayHelpMenu method
+        * Purpose: display the help menu
+        * Parameters: none
+        * Returns: none
+        */
+        // ===================================
+        public void displayHelpMenuView()
+        {
+        System.out.println("Displaying help menu.");
+        }
+        
+        /**
+        * The displaySavedGameMenu method
+        * Purpose: display save game view
+        * Parameters: none
+        * Returns: none
+        */
+        // ===================================
+        public void displaySaveGameView()
+        {
+        System.out.println("display save game view.");
+        }
 }
