@@ -18,7 +18,17 @@ import view.*;
  * @author awesome
  */
 public class CityOfAaron {
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
 
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
+    
     /**
      * @param args the command line arguments
      */
