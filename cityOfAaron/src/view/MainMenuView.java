@@ -123,25 +123,44 @@ public class MainMenuView {
         */
         // ===================================
         public void startNewGame() {
-        //Create a new Game object.
-        Game theGame = new Game();
-        // Save a reference to it in the GameProject class.
-        CityOfAaron.setTheGame(theGame);
-        // Display the Banner Page.
-        System.out.println("Welcome to the city of Aaron.");
-        // Create a new Player object
-        Player thePlayer = new Player();
-        // Prompt for and get the user’s name.
-        String name;
-        System.out.println("Please type in your first name: ");
-        name = keyboard.next();
-        // Save the user’s name in the Player object
-        thePlayer.setName(name);
-        // Save a reference to the player object in the Game object
-        theGame.setThePlayer(thePlayer);
-        // Display a welcome message
-        System.out.println("Welcome " + name + " have fun.");
-        // Display the Game menu
+            // Create a CropData object,
+            CropData cropData = new CropData();
+            // initialize it
+            cropData.setYear(0);
+            cropData.setPopulation(100);
+            cropData.setNewPeople(5);
+            cropData.setCropYield(3);
+            cropData.setNumberWhoDied(0);
+            cropData.setOffering(10);
+            cropData.setWheatInStore(2700);
+            cropData.setAcresOwned(1000);
+            cropData.setAcresPlanted(1000);
+            cropData.setHarvest(3000);
+            cropData.setOfferingBushels(300);
+            cropData.setAcresPlanted(1000);
+            
+            //Create a new Game object.
+            Game theGame = new Game();
+            // Save a reference to it in the GameProject class.
+            CityOfAaron.setTheGame(theGame);
+            // Display the Banner Page.
+            System.out.println("Welcome to the city of Aaron.");
+            // Create a new Player object
+            Player thePlayer = new Player();
+            // Prompt for and get the user’s name.
+            String name;
+            System.out.println("Please type in your first name: ");
+            name = keyboard.next();
+            // Save the user’s name in the Player object
+            thePlayer.setName(name);
+            // Save a reference to the player object in the Game object
+            theGame.setThePlayer(thePlayer);
+            // Display a welcome message
+            System.out.println("Welcome " + name + " have fun.");
+            // Display the Game menu
+            
+            // save a reference to it in the Game
+            theGame.setCropData(cropData);
         }
         
         /**

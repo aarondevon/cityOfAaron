@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package control;
+import java.util.Random;
 import model.CropData;
  
 /**
@@ -11,7 +12,7 @@ import model.CropData;
  * @author awesome
  */
 public class CropControl {
-    
+    private static Random random = new Random();
     // Purpose: buy land
     // Parameters: the price of land, number of acres to buy, a reference to CropData object
     // Pre-conditions: enough wheat to buy land (wheat must be equal to or more than amount 
@@ -141,5 +142,15 @@ public class CropControl {
         cropData.setWheatInStore(cropData.getWheatInStore() - bushelsGiven);
         // return wheatInStore
         return cropData.getWheatInStore();
+    }
+    
+    /**
+    * calcLandCost() method
+    * Purpose: Calculate a random land cost between 17 and 27 bushels/acre * Parameters: none
+    * Returns: the land cost
+    */
+    public static int calcLandCost() {
+        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
+        return landPrice; 
     }
 }
