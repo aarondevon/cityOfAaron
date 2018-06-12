@@ -31,7 +31,7 @@ public class CropView {
         int price = CropControl.calcLandCost();
         // Prompt the user to enter the number of acres to buy
         System.out.format("You can buy land for %d bushels per acre.%n",price);
-        System.out.print("How many acres of land do you wish to buy? ");
+        System.out.print("How many acres of new land do you want to buy? ");
 
         // Get the user’s input and save it.
         int toBuy;
@@ -46,7 +46,7 @@ public class CropView {
         
         // Prompt user to enter the number of acres to sell
         System.out.format("You can sell land for %d bushels per acre.%n",price);
-        System.out.print("How many acres of land do you wish to sell? ");
+        System.out.print("How many acres of new land do you want to sell? ");
         
         // Get the user’s input and save it.
         int toSell;
