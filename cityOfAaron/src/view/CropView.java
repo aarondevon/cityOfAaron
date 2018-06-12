@@ -58,7 +58,7 @@ public class CropView {
     
     public static void feedPeopleView() {
         // Prompt user to enter how many bushels of grain to give to the people
-        System.out.format("How many bushels of grain do you want to give to the people? ");
+        System.out.format("How many bushels of grain do you want to give to the people?%n ");
         
         // Get the user's input and save it.
         int bushels = keyboard.nextInt();
@@ -67,6 +67,27 @@ public class CropView {
         CropControl.feedPeople(bushels, cropData);
     }
     
+    public static void plantCropsView() {
+        // Prompt the user to input how many acres of land to plant
+        System.out.format("How many acres of land do you want to plant?%n ");
+        
+        // Get the user's input and save it.
+        int plantedCrops = keyboard.nextInt();
+        
+        // Call the plantCrops() method in the control layer
+        CropControl.plantCrops(plantedCrops, cropData);
+    }
+    
+    public static void setOfferingView() {
+        // Prompt the user to input percentage of harvest to pay in offering
+        System.out.format("What percentage of your harvest do you want to pay as an offering (0-100)?%n ");
+        
+        // Get the user's input and save it.
+        int offeringPercentage = keyboard.nextInt();
+        
+        // Call the plantCrops() method in the control layer
+        CropControl.setOffering(offeringPercentage, cropData);
+    }
     
     /**
     * The runCropsView method()
