@@ -41,8 +41,7 @@ public class HelpMenuView extends MenuView {
                     viewHowList();
                     break;
                 case 6:
-                    MainMenuView mmv = new MainMenuView();
-                    mmv.displayMenu();
+                    break;
                 
             }
         }

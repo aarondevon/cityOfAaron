@@ -38,8 +38,7 @@ public class ListMenuView extends MenuView {
                     listTeam();
                     break;
                 case 5:
-                    GameMenuView gmv = new GameMenuView();
-                    gmv.displayMenu();   
+                    break;   
             }
         }
     

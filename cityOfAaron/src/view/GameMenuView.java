@@ -36,10 +36,10 @@ public class GameMenuView extends MenuView {
             manageCrops();
             break;
         case 5:
-            MainMenuView mmv = new MainMenuView();
-            mmv.displayMenu();
-            }
+            break;
         }
+        
+   }
    
     public void viewMap() {
         System.out.println("viewMap");
