@@ -109,7 +109,8 @@ public class MainMenuView extends MenuView {
             // Display a welcome message
             System.out.println("Welcome " + name + " have fun.");
             // Display the Game menu
-            
+            GameMenuView gmv = new GameMenuView();
+            gmv.displayMenu();
             // save a reference to it in the Game
             theGame.setCropData(cropData);
         }
