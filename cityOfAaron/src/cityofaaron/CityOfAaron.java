@@ -56,7 +56,7 @@ public class CityOfAaron {
 //        System.out.println("You own " + cropDataOne.getAcresOwned() + " acres!");
         
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu();
 
     }
     

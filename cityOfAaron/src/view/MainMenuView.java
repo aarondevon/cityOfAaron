@@ -39,14 +39,14 @@ public class MainMenuView {
         }
     
     /**
-    * The displayMenuView method
+    * The displayMenu method
     * Purpose: displays the menu, gets the user's input, and does the
     * selected action
     * Parameters: none
     * Returns: none
     */
     // =========================================================
-        public void displayMenuView() {
+        public void displayMenu() {
             int menuOption;
             do {
             // Display the menu
