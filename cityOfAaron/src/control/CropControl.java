@@ -12,7 +12,13 @@ import model.CropData;
  * @author awesome
  */
 public class CropControl {
+    // constants
+    private static final int LAND_BASE = 17;
+    private static final int LAND_RANGE = 11;
+    
+    // random number generator
     private static Random random = new Random();
+    
     // Purpose: buy land
     // Parameters: the price of land, number of acres to buy, a reference to CropData object
     // Pre-conditions: enough wheat to buy land (wheat must be equal to or more than amount 
