@@ -8,6 +8,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.*;
+import view.*;
 
 /**
  *
@@ -132,7 +133,8 @@ public class MainMenuView extends MenuView {
         */
         // ===================================
         public void displayHelpMenuView() {
-        System.out.println("Displaying help menu.");
+            HelpMenuView hmv = new HelpMenuView();
+            hmv.displayMenu();
         }
         
         /**
