@@ -44,5 +44,11 @@ public class Map {
         this.locations[row][col]= _location;
     }
     
-    
+    public void displayMap() {
+        for(int i = 0; i < locations.length; i++) {
+            for(int j = 0; j < locations[i].length; j++) {
+                System.out.println(locations[i][j]);
+            }
+        }   
+    }
 }
