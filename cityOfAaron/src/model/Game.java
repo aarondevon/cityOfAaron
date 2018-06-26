@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class Game implements Serializable {
     private Player thePlayer;
     private CropData cropData = null;
+    private Map theMap;
 
     public Player getThePlayer() {
         return thePlayer;
@@ -39,5 +40,13 @@ public class Game implements Serializable {
      */
     public void setCropData(CropData cropRef) {
         cropData = cropRef;
+    }
+    
+    public Map getMap() {
+        return this.theMap;
+    }
+    
+    public void setMap(Map map) {
+        this.theMap = map;
     }
 }
