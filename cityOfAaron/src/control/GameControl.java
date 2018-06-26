@@ -71,7 +71,6 @@ public class GameControl {
         // define the string for the Ruler's Court location
         String court = "";
         // set a court location with a hint
-        loc = new Location();
         loc.setDescription(court + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("$$$");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -81,7 +80,6 @@ public class GameControl {
         // define the string for the City's Granary location
         String granary = "";
         // set a granary location with a hint
-        loc = new Location();
         loc.setDescription(granary + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("###");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -93,7 +91,6 @@ public class GameControl {
         "In the spring, this low farmland floods and is covered with rich\n" +
         "new soil. Wheat is planted as far as you can see.";
         // set a farmland location with a hint
-        loc = new Location();
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -103,7 +100,6 @@ public class GameControl {
         // define the string for the Undeveloped Land location
         String undeveloped = "";
         // set a undeveloped location with a hint
-        loc = new Location();
         loc.setDescription(undeveloped + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("???");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -113,7 +109,6 @@ public class GameControl {
         // define the string for the Desert location
         String desert = "";
         // set a desert location with a hint
-        loc = new Location();
         loc.setDescription(desert + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("===");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -123,7 +118,6 @@ public class GameControl {
         // define the string for the Village location
         String village = "";
         // set a village location with a hint
-        loc = new Location();
         loc.setDescription(village + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("^^^");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -147,7 +141,6 @@ public class GameControl {
         // define the string for the Lamanite border location
         String lamaniteBorder = "";
         // set a lamaniteBorder location with a hint
-        loc = new Location();
         loc.setDescription(lamaniteBorder + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("|||");
         for(int i = 0; i < MAX_ROW; i++) {
@@ -158,3 +151,4 @@ public class GameControl {
         
         theGame.setMap(theMap);
     }
+}
