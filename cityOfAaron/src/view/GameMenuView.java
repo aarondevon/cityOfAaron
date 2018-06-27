@@ -3,6 +3,7 @@
  */
 package view;
 import view.*;
+import model.*;
 /**
  *
  * @author carly and aaron
@@ -37,12 +38,13 @@ public class GameMenuView extends MenuView {
             break;
         case 5:
             break;
-        }
-        
+        }  
    }
    
     public void viewMap() {
-        System.out.println("viewMap");
+        //System.out.println("viewMap");
+        Map theMap = new Map(5, 8);
+        theMap.displayMap();
     }
     
     public void viewList() {

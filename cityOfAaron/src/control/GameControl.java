@@ -14,7 +14,7 @@ import model.*;
 public class GameControl {
     // size of the Locations array
     private static final int MAX_ROW = 5;
-    private static final int MAX_COL = 5;
+    private static final int MAX_COL = 8;
     // reference to a Game object
     private static Game theGame;
     

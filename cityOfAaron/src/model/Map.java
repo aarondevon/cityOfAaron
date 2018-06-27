@@ -15,6 +15,7 @@ public class Map {
     private Location[] [] locations;    // a reference to a 2-dimensional array of Location objects
     
     public Map(int _rows, int _cols) {
+    // Params int _rows, int _cols
      this.rowCount = _rows;
      this.colCount = _cols;
      
@@ -45,10 +46,19 @@ public class Map {
     }
     
     public void displayMap() {
-        for(int i = 0; i < locations.length; i++) {
-            for(int j = 0; j < locations[i].length; j++) {
-                System.out.println(locations[i][j]);
-            }
-        }   
-    }
+        //array = [
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // ];
+        
+        System.out.println(getLocation(0, 7));
+//        for(int i = 0; i < locations.length; i++) {
+//            for(int j = 0; j < locations[i].length; j++) {
+//                System.out.println(locations[i][j]);
+//            }
+//        }   
+    } 
 }
