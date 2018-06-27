@@ -53,12 +53,19 @@ public class Map {
         // [1,2,3,4,5,6,7,8],
         // [1,2,3,4,5,6,7,8],
         // ];
+        String[][] symbolLocations = {
+            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"}
+        };
         
-        System.out.println(getLocation(0, 7));
-//        for(int i = 0; i < locations.length; i++) {
-//            for(int j = 0; j < locations[i].length; j++) {
-//                System.out.println(locations[i][j]);
-//            }
-//        }   
+        for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 8; j++) {
+                System.out.print(symbolLocations[i][j]);
+            }
+            System.out.println();
+        }   
     } 
 }
