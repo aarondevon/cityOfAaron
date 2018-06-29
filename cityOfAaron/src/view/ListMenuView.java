@@ -20,7 +20,7 @@ public class ListMenuView extends MenuView {
                 "**********************************\n" +
                 " 1 - View the animals in the storehouse\n" +
                 " 2 - View the tools in the storehouse\n" +
-                " 3 - View the porvisions in the storehouse\n" +
+                " 3 - View the provisions in the storehouse\n" +
                 " 4 - View authors of this game\n" +
                 " 5 - Back to the Game Menu?\n",
             5);
