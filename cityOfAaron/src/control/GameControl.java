@@ -220,7 +220,7 @@ public class GameControl {
     
     public void displayAnimalList() {
         for (int i = 0; i < theGame.getAnimals().size(); i++) {
-            System.out.println(theGame.getAnimals().get(i).getName());
+            System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
         }  
     }
     
