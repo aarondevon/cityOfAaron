@@ -31,6 +31,7 @@ public class GameControl {
     createAnimalList();
     createToolList();
     createProvisionList();
+    createTeamList();
     
     
     // create the list of animals
@@ -266,5 +267,17 @@ public class GameControl {
         }  
     }
 
+    public static void createTeamList() {
+        ArrayList<ListItem> team = new ArrayList<ListItem>();
+        team.add(new ListItem("Carly, the dolphin trainer", 1));
+        team.add(new ListItem("Aaron, obviously the ruler of the city", 1));
+        
+        theGame.setTeam(team);
+    }
     
+    public void displayTeamList() {
+        for (int i = 0; i < theGame.getTeam().size(); i++) {
+            System.out.println(theGame.getTeam().get(i).getName());
+        }  
+    }
 }

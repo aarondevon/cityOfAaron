@@ -65,6 +65,8 @@ public class ListMenuView extends MenuView {
     }
     
     public void listTeam() {
-        System.out.println("listTeam");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayTeamList();
     }
 }
