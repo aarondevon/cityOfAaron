@@ -29,6 +29,8 @@ public class GameControl {
     createCropDataObject();
     createMap();
     createAnimalList();
+    createToolList();
+    createProvisionList();
     
     
     // create the list of animals
@@ -223,5 +225,46 @@ public class GameControl {
             System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
         }  
     }
+    
+    public static void createToolList() {
+        ArrayList<ListItem> tools = new ArrayList<ListItem>();
+        tools.add(new ListItem("hoes", 500));
+        tools.add(new ListItem("rakes", 200));
+        tools.add(new ListItem("pitchforks", 150));
+        tools.add(new ListItem("scythe", 50));
+        tools.add(new ListItem("sickle", 100));
+        tools.add(new ListItem("subsoil plow", 75));
+        
+        theGame.setTools(tools);
+    }
+    
+    public void displayToolList() {
+        for (int i = 0; i < theGame.getTools().size(); i++) {
+            System.out.println(theGame.getTools().get(i).getName() + ": " +theGame.getTools().get(i).getNumber());
+        }  
+    }
+    
+    public static void createProvisionList() {
+        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+        provisions.add(new ListItem("dried beef", 75));
+        provisions.add(new ListItem("salted pork", 100));
+        provisions.add(new ListItem("wheat", theGame.getCropData().getWheatInStore()));
+        provisions.add(new ListItem("butter", 40));
+        provisions.add(new ListItem("cheese", 30));
+        provisions.add(new ListItem("bacon", 50));
+        
+        theGame.setProvisions(provisions);
+    }
+    
+    public void displayProvisionList() {
+        for (int i = 0; i < theGame.getProvisions().size(); i++) {
+            if (theGame.getProvisions().get(i).getName() == "wheat") {
+                System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber() + " bushels");
+            } else {
+                System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber() + " lbs");
+            }   
+        }  
+    }
+
     
 }

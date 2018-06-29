@@ -53,11 +53,15 @@ public class ListMenuView extends MenuView {
     }
     
     public void listTools() {
-        System.out.println("listTools");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayToolList();
     }
     
     public void listProvisions() {
-        System.out.println("listProvisions");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayProvisionList();
     }
     
     public void listTeam() {
