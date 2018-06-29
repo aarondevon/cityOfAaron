@@ -222,8 +222,8 @@ public class GameControl {
     }
     
     public void displayAnimalList() {
-        for (int i = 0; i < theGame.getAnimals().size(); i++) {
-            System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
+        for (ListItem animal : theGame.getAnimals()) {
+            System.out.println(animal.getName() + ": " + animal.getNumber());
         }  
     }
     
@@ -240,8 +240,8 @@ public class GameControl {
     }
     
     public void displayToolList() {
-        for (int i = 0; i < theGame.getTools().size(); i++) {
-            System.out.println(theGame.getTools().get(i).getName() + ": " +theGame.getTools().get(i).getNumber());
+        for (ListItem tool: theGame.getTools()) {
+            System.out.println(tool.getName() + ": " + tool.getNumber());
         }  
     }
     
@@ -258,11 +258,11 @@ public class GameControl {
     }
     
     public void displayProvisionList() {
-        for (int i = 0; i < theGame.getProvisions().size(); i++) {
-            if (theGame.getProvisions().get(i).getName() == "wheat") {
-                System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber() + " bushels");
+        for (ListItem provision : theGame.getProvisions()) {
+            if (provision.getName() == "wheat") {
+                System.out.println(provision.getName() + ": " + provision.getNumber() + " bushels");
             } else {
-                System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber() + " lbs");
+                System.out.println(provision.getName() + ": " + provision.getNumber() + " lbs");
             }   
         }  
     }
@@ -276,8 +276,8 @@ public class GameControl {
     }
     
     public void displayTeamList() {
-        for (int i = 0; i < theGame.getTeam().size(); i++) {
-            System.out.println(theGame.getTeam().get(i).getName());
+        for (ListItem team: theGame.getTeam()) {
+            System.out.println(team.getName());
         }  
     }
 }
