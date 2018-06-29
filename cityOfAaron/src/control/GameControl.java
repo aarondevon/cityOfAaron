@@ -28,6 +28,7 @@ public class GameControl {
     theGame.setThePlayer(thePlayer);
     createCropDataObject();
     createMap();
+    createAnimalList();
     
     
     // create the list of animals
@@ -171,13 +172,13 @@ public class GameControl {
             loc.setSymbol("|||");
             theMap.setLocation(i, 0, loc);
         }
-        Game game = CityOfAaron.getTheGame();
-        game.setMap(theMap);
+        //Game theGame = CityOfAaron.getTheGame();
+        theGame.setMap(theMap);
     }
     
     public void displayMap() {
-        Game game = CityOfAaron.getTheGame();
-        Map theMap = game.getMap();
+//        Game game = CityOfAaron.getTheGame();
+        Map theMap = theGame.getMap();
         // System.out.println("Hi, I am the Map");
         // System.out.println(theMap.getLocation(0, 2).getSymbol());
         //array = [
@@ -203,4 +204,24 @@ public class GameControl {
             System.out.println();
         }   
     }
+    
+    public static void createAnimalList() {
+        ArrayList<ListItem> animals = new ArrayList<ListItem>();
+        animals.add(new ListItem("dolphins", 30));
+        animals.add(new ListItem("alicorn", 5));
+        animals.add(new ListItem("cows", 12));
+        animals.add(new ListItem("horses", 3));
+        animals.add(new ListItem("pigs", 7));
+        animals.add(new ListItem("goats", 4));
+        // Save the animals in the game
+//        Game theGame = CityOfAaron.getTheGame();
+        theGame.setAnimals(animals);
+    }
+    
+    public void displayAnimalList() {
+        for (int i = 0; i < theGame.getAnimals().size(); i++) {
+            System.out.println(theGame.getAnimals().get(i).getName());
+        }  
+    }
+    
 }

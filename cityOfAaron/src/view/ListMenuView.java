@@ -5,6 +5,9 @@
  */
 package view;
 import view.*;
+import control.*;
+import model.*;
+import cityofaaron.CityOfAaron;
 /**
  *
  * @author awesome
@@ -43,7 +46,10 @@ public class ListMenuView extends MenuView {
         }
     
     public void listAnimals() {
-        System.out.println("listAnimals");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayAnimalList();
+        
     }
     
     public void listTools() {
