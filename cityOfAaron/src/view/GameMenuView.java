@@ -2,8 +2,10 @@
  * 
  */
 package view;
+import cityofaaron.CityOfAaron;
 import view.*;
 import model.*;
+import control.*;
 /**
  *
  * @author carly and aaron
@@ -42,9 +44,9 @@ public class GameMenuView extends MenuView {
    }
    
     public void viewMap() {
-        //System.out.println("viewMap");
-        Map theMap = new Map(5, 8);
-        theMap.displayMap();
+        GameControl theGameControl = new GameControl();
+        theGameControl.displayMap();
+        
     }
     
     public void viewList() {

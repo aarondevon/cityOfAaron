@@ -26,6 +26,8 @@ public class GameControl {
     Player thePlayer = new Player();
     thePlayer.setName(name);
     theGame.setThePlayer(thePlayer);
+    createCropDataObject();
+    createMap();
     
     
     // create the list of animals
@@ -50,6 +52,7 @@ public class GameControl {
         theCrops.setOfferingBushels(300);
         theCrops.setAcresPlanted(1000);
         // Save the cropData in the Game object
+        
         theGame.setCropData(theCrops);
     }
     
@@ -64,25 +67,32 @@ public class GameControl {
         // refer to the Map constructor
         Map theMap = new Map(MAX_ROW, MAX_COL);
         
-        // create a new Location object
-        Location loc = new Location();
+        
+        
         
         
         // define the string for the Ruler's Court location
         String court = "";
         // set a court location with a hint
-        loc.setDescription(court + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("$$$");
+        
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // define the string for the Ruler's Court location
+            loc.setDescription(court + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("$$$");
             theMap.setLocation(i, 2, loc);
         }
         
         // define the string for the City's Granary location
         String granary = "";
-        // set a granary location with a hint
-        loc.setDescription(granary + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("###");
+        
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a granary location with a hint
+            loc.setDescription(granary + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("###");
             theMap.setLocation(i, 3, loc);
         }
         
@@ -90,37 +100,48 @@ public class GameControl {
         String farmland = "You are on the fertile banks of the River.\n" +
         "In the spring, this low farmland floods and is covered with rich\n" +
         "new soil. Wheat is planted as far as you can see.";
-        // set a farmland location with a hint
-        loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("!!!");
+        
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a farmland location with a hint
+            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("!!!");
             theMap.setLocation(i, 6, loc);
         }
         
         // define the string for the Undeveloped Land location
         String undeveloped = "";
-        // set a undeveloped location with a hint
-        loc.setDescription(undeveloped + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("???");
+        
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a undeveloped location with a hint
+            loc.setDescription(undeveloped + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("???");
             theMap.setLocation(i, 5, loc);
         }
         
         // define the string for the Desert location
         String desert = "";
-        // set a desert location with a hint
-        loc.setDescription(desert + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("===");
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a desert location with a hint
+            loc.setDescription(desert + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("===");
             theMap.setLocation(i, 1, loc);
         }
         
         // define the string for the Village location
         String village = "";
-        // set a village location with a hint
-        loc.setDescription(village + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("^^^");
+        
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a village location with a hint
+            loc.setDescription(village + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("^^^");
             theMap.setLocation(i, 4, loc);
         }
         
@@ -130,25 +151,56 @@ public class GameControl {
         "of life for our city. The river marks the eastern\n " +
         "boundary of the city - it is wilderness to the East.\n";
         
-        // use setters in the Location class to set the description and symbol
-        loc.setDescription(river);
-        loc.setSymbol("~~~");
         // set this location object in each cell of the array in column 4
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // use setters in the Location class to set the description and symbol
+            loc.setDescription(river);
+            loc.setSymbol("~~~");
             theMap.setLocation(i, 7, loc);
         }
         
         // define the string for the Lamanite border location
         String lamaniteBorder = "";
-        // set a lamaniteBorder location with a hint
-        loc.setDescription(lamaniteBorder + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("|||");
         for(int i = 0; i < MAX_ROW; i++) {
+            // create a new Location object
+            Location loc = new Location();
+            // set a lamaniteBorder location with a hint
+            loc.setDescription(lamaniteBorder + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("|||");
             theMap.setLocation(i, 0, loc);
         }
+        Game game = CityOfAaron.getTheGame();
+        game.setMap(theMap);
+    }
+    
+    public void displayMap() {
+        Game game = CityOfAaron.getTheGame();
+        Map theMap = game.getMap();
+        // System.out.println("Hi, I am the Map");
+        // System.out.println(theMap.getLocation(0, 2).getSymbol());
+        //array = [
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // [1,2,3,4,5,6,7,8],
+        // ];
         
-        
-        
-        theGame.setMap(theMap);
+//        String[][] symbolLocations = {
+//            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+//            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+//            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+//            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
+//            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"}
+//        };
+            
+        for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 8; j++) {
+                System.out.print(theMap.getLocation(i, j).getSymbol() + " ");
+            }
+            System.out.println();
+        }   
     }
 }

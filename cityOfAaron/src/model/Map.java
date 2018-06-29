@@ -12,7 +12,7 @@ package model;
 public class Map {
     private int rowCount;               // stores the number of rows
     private int colCount;               // stores the number of columns
-    private Location[] [] locations;    // a reference to a 2-dimensional array of Location objects
+    private Location[][] locations;    // a reference to a 2-dimensional array of Location objects
     
     public Map(int _rows, int _cols) {
     // Params int _rows, int _cols
@@ -43,29 +43,5 @@ public class Map {
     */
     public void setLocation(int row, int col, Location _location) {
         this.locations[row][col]= _location;
-    }
-    
-    public void displayMap() {
-        //array = [
-        // [1,2,3,4,5,6,7,8],
-        // [1,2,3,4,5,6,7,8],
-        // [1,2,3,4,5,6,7,8],
-        // [1,2,3,4,5,6,7,8],
-        // [1,2,3,4,5,6,7,8],
-        // ];
-        String[][] symbolLocations = {
-            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
-            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
-            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
-            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"},
-            {"|||", "===", "$$$", "###", "^^^", "???", "!!!", "~~~"}
-        };
-        
-        for(int i = 0; i < 5; i++) {
-            for(int j = 0; j < 8; j++) {
-                System.out.print(symbolLocations[i][j]);
-            }
-            System.out.println();
-        }   
     } 
 }
