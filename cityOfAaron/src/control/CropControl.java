@@ -6,6 +6,7 @@
 package control;
 import java.util.Random;
 import model.CropData;
+import exceptions.CropException;
  
 /**
  *
@@ -27,18 +28,19 @@ public class CropControl {
     // number entered by user must be 0 or positive integer [b >= 0]
     // Returns: amount of land after purchase
 
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException {
         // IF acresToBuy < 0, return -1
         if (acresToBuy < 0) {
-            return -1;
+            throw new CropException("A negative value was input");
         }
         // IF wheatInStore < acresToBuy x landPrice, return -1
         if (cropData.getWheatInStore() < acresToBuy * landPrice) {
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land");
+            
         }
         // IF acresToBuy + acresOwned > population x 10, return -1
         if (acresToBuy + cropData.getAcresOwned() > cropData.getPopulation() * 10) {
-            return -1;
+            throw new CropException("You do not have enough citizens for that much land");
         }
        
         // wheatInStore = wheatInStore – (acresToBuy x landPrice
@@ -47,7 +49,7 @@ public class CropControl {
         cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
        
         // return acresOwned
-        return cropData.getAcresOwned();
+//        return cropData.getAcresOwned();
    }
     
     // sellLandmethod
