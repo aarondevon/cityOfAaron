@@ -102,14 +102,24 @@ public class CropView {
     }
     
     public static void plantCropsView() {
-        // Prompt the user to input how many acres of land to plant
+        int plantedCrops;
+        
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            // Prompt the user to input how many acres of land to plant
         System.out.format("How many acres of land do you want to plant?%n ");
-        
-        // Get the user's input and save it.
-        int plantedCrops = keyboard.nextInt();
-        
-        // Call the plantCrops() method in the control layer
-        CropControl.plantCrops(plantedCrops, cropData);
+            // Get the user’s input and save it.
+            plantedCrops = keyboard.nextInt();
+            try {
+                // Call the plantCrops() method in the control layer
+                CropControl.plantCrops(plantedCrops, cropData);
+            } catch(CropException error) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(error.getMessage());
+                paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
     }
     
     public static void setOfferingView() {

@@ -89,24 +89,22 @@ public class CropControl {
     // [w >= w – (p / 2)]
     // Return: wheat in storage
 
-    public static int plantCrops(int acresToPlant, CropData cropData) {
+    public static void plantCrops(int acresToPlant, CropData cropData) throws CropException {
         // IF acresToPlant < 0, return -1
         if (acresToPlant < 0) {
-            return -1;
+            throw new CropException("A negative value was input");
         }
         // IF acresOwned < acresToPlant, return -1
         if (cropData.getAcresOwned() < acresToPlant) {
-            return -1;
+            throw new CropException("You do not have that much land");
         }
         // IF wheatInStore < acresToPlant / 2, return -1
         if (cropData.getWheatInStore() < acresToPlant / 2) {
-            return -1;
+            throw new CropException("You do not have enough wheat");
         }
         
         // wheatInStore = wheatInStore – (acresToPlant / 2)
         cropData.setWheatInStore(cropData.getWheatInStore() - acresToPlant / 2);
-        // return wheatInStore
-        return cropData.getWheatInStore();
     }
    
     // Purpose: Obtain what percentage of the harvest the user wants to pay in offerings.
