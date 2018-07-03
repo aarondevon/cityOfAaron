@@ -111,18 +111,16 @@ public class CropControl {
     // Parameters: number entered by user, a reference to CropData object
     // Pre-conditions: number entered by user must be greater than or equal to zero, number enterd by user must not be greater than one hundred. 
     // Returns: number entered by user
-    public static int setOffering(int offering, CropData cropData) {
+    public static void setOffering(int offering, CropData cropData) throws CropException {
         // IF offering < 0, return -1
         if(offering < 0) {
-            return -1;
+            throw new CropException("A negative value was input");
         }
         // IF offering > 100, return -1
         if(offering > 100) {
-            return -1;
+            throw new CropException("Your offering can't be greater than 100%");
         }
         cropData.setOffering(offering);
-        // return offering
-        return offering;
     }
 
     //Purpose: Receive input from user on how much wheat to set aside for feeding people

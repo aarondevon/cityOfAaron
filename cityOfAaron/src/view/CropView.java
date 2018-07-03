@@ -123,14 +123,25 @@ public class CropView {
     }
     
     public static void setOfferingView() {
-        // Prompt the user to input percentage of harvest to pay in offering
-        System.out.format("What percentage of your harvest do you want to pay as an offering (0-100)?%n ");
         
-        // Get the user's input and save it.
-        int offeringPercentage = keyboard.nextInt();
+        int offeringPercentage;
         
-        // Call the plantCrops() method in the control layer
-        CropControl.setOffering(offeringPercentage, cropData);
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            // Prompt the user to input percentage of harvest to pay in offering
+            System.out.format("What percentage of your harvest do you want to pay as an offering (0-100)?%n ");
+            // Get the user’s input and save it.
+            offeringPercentage = keyboard.nextInt();
+            try {
+                // Call the plantCrops() method in the control layer
+                CropControl.setOffering(offeringPercentage, cropData);
+            } catch(CropException error) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(error.getMessage());
+                paramsNotOkay = true;
+            }
+        } while(paramsNotOkay); 
     }
     
     /**
