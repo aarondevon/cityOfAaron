@@ -89,7 +89,7 @@ public class GameControl {
         }
         
         // define the string for the City's Granary location
-        String granary = "A tall silo where all of your wheat is storred";
+        String granary = "A tall silo where all of your wheat is stored";
         
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
