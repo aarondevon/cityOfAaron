@@ -59,6 +59,11 @@ public class GameMenuView extends MenuView {
     }
     
     public void manageCrops() {
-        System.out.println("manageCrops");
+        CropView cropView = new CropView();
+        cropView.buyLandView();
+        cropView.sellLandView();
+        cropView.feedPeopleView();
+        cropView.setOfferingView();
+        
     }
 }
