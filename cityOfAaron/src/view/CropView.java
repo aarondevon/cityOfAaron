@@ -80,17 +80,25 @@ public class CropView {
     }
     
     public static void feedPeopleView() {
-        // Prompt user to enter how many bushels of grain to give to the people
-        System.out.format("How many bushels of grain do you want to give to the people?%n ");
+                
+        int bushels;
         
-        // Get the user's input and save it.
-        int bushels = keyboard.nextInt();
-        
-        
-        
-        
-        // Call the feedPeople() method in the control layer 
-        CropControl.feedPeople(bushels, cropData);
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            // Prompt user to enter how many bushels of grain to give to the people
+            System.out.format("How many bushels of grain do you want to give to the people?%n ");
+            // Get the user’s input and save it.
+            bushels = keyboard.nextInt();
+            try {
+                // Call the feedPeople() method in the control layer 
+                CropControl.feedPeople(bushels, cropData);
+            } catch(CropException error) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(error.getMessage());
+                paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
     }
     
     public static void plantCropsView() {
