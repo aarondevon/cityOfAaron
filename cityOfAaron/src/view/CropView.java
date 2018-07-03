@@ -59,15 +59,24 @@ public class CropView {
         int price = CropControl.calcLandCost();
         
         // Prompt user to enter the number of acres to sell
-        System.out.format("You can sell land for %d bushels per acre.%n",price);
-        System.out.print("How many acres of new land do you want to sell? ");
         
-        // Get the user’s input and save it.
         int toSell;
-        toSell = keyboard.nextInt();
-        
-        // Call the sellLand() method in the control layer to sell the land
-        CropControl.sellLand(price, toSell, cropData);
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            System.out.format("You can sell land for %d bushels per acre.%n",price);
+            System.out.print("How many acres of new land do you want to sell? ");
+            // Get the user’s input and save it.
+            toSell = keyboard.nextInt();
+            try {
+                // Call the sellLand() method in the control layer to sell the land
+                CropControl.sellLand(price, toSell, cropData);
+            } catch(CropException error) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(error.getMessage());
+                paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);   
     }
     
     public static void feedPeopleView() {
@@ -76,6 +85,9 @@ public class CropView {
         
         // Get the user's input and save it.
         int bushels = keyboard.nextInt();
+        
+        
+        
         
         // Call the feedPeople() method in the control layer 
         CropControl.feedPeople(bushels, cropData);
