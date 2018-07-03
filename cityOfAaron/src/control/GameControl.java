@@ -76,26 +76,26 @@ public class GameControl {
         
         
         // define the string for the Ruler's Court location
-        String court = "";
+        String court = "The seat of your power, here is where you graciously and wisely rule over your people.";
         // set a court location with a hint
         
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
             Location loc = new Location();
             // define the string for the Ruler's Court location
-            loc.setDescription(court + "\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(court);
             loc.setSymbol("$$$");
             theMap.setLocation(i, 2, loc);
         }
         
         // define the string for the City's Granary location
-        String granary = "";
+        String granary = "A tall silo where all of your wheat is storred";
         
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
             Location loc = new Location();
             // set a granary location with a hint
-            loc.setDescription(granary + "\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(granary + "\nIt takes 20 bushels to feed one person");
             loc.setSymbol("###");
             theMap.setLocation(i, 3, loc);
         }
@@ -115,7 +115,7 @@ public class GameControl {
         }
         
         // define the string for the Undeveloped Land location
-        String undeveloped = "";
+        String undeveloped = "There are sweeping acres of prime undeveloped land";
         
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
@@ -127,24 +127,24 @@ public class GameControl {
         }
         
         // define the string for the Desert location
-        String desert = "";
+        String desert = "A burning hot desert seperates us from our foes, the Lamanites";
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
             Location loc = new Location();
             // set a desert location with a hint
-            loc.setDescription(desert + "\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(desert);
             loc.setSymbol("===");
             theMap.setLocation(i, 1, loc);
         }
         
         // define the string for the Village location
-        String village = "";
+        String village = "Your people live here happily tending the land";
         
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
             Location loc = new Location();
             // set a village location with a hint
-            loc.setDescription(village + "\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(village + "\nIt takes 20 bushels to feed one person");
             loc.setSymbol("^^^");
             theMap.setLocation(i, 4, loc);
         }
@@ -166,12 +166,12 @@ public class GameControl {
         }
         
         // define the string for the Lamanite border location
-        String lamaniteBorder = "";
+        String lamaniteBorder = "Those crazy Lamanites are partying all day and night. It's annoying, get a job!";
         for(int i = 0; i < MAX_ROW; i++) {
             // create a new Location object
             Location loc = new Location();
             // set a lamaniteBorder location with a hint
-            loc.setDescription(lamaniteBorder + "\nOne bushel will plant two acres of wheat.");
+            loc.setDescription(lamaniteBorder + "\nDo not feed the wild Lamanites, they bite");
             loc.setSymbol("|||");
             theMap.setLocation(i, 0, loc);
         }
