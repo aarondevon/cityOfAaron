@@ -306,6 +306,22 @@ public class GameControl {
         }  
     }
 
+    public void saveProvisionList(String filePath) {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+                out.println("\n\n Provision List Report");
+                out.printf("%n%-20s%10s", "Provision Type", "Quantity");
+                out.printf("%n%-20s%10s", "___________", "________");
+                
+            // Print animal type and quantity    
+            for (ListItem provision: theGame.getProvisions()) {
+                out.printf("%n%-20s%7d",provision.getName(), provision.getNumber());
+        }
+            }
+            catch(Exception e) {
+                System.out.println("There was an error saving the list\n");
+            }
+    }
+    
     public static void createTeamList() {
         ArrayList<ListItem> team = new ArrayList<ListItem>();
         team.add(new ListItem("Carly, the dolphin trainer", 1));
