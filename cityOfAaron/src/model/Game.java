@@ -19,6 +19,7 @@ public class Game implements Serializable {
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provisions;
     private ArrayList<ListItem> team;
+    private boolean done = false;
 
     public Player getThePlayer() {
         return thePlayer;

@@ -112,7 +112,18 @@ public class MainMenuView extends MenuView {
         */
         // ===================================
         public void startSavedGame() {
-        System.out.println("Start saved game option selected.");
+//          System.out.println("Start saved game option selected.");
+            // get rid of \n character left in the stream
+            keyboard.nextLine();
+            // prompt user and get a file path
+            System.out.println("Please enter the file path to load the game.");
+            String filePath = keyboard.nextLine();
+            // call the getSavedGame( ) method in the GameControl class to load the game
+            GameControl theGame = new GameControl();
+            theGame.getSavedGame(filePath);
+            // display the game menu for the loaded game
+            GameMenuView gmv = new GameMenuView();
+            gmv.displayMenu();
         }
         
         /**
@@ -135,6 +146,17 @@ public class MainMenuView extends MenuView {
         */
         // ===================================
         public void displaySaveGameView() {
-        System.out.println("display save game view.");
+        // System.out.println("display save game view.");
+        // get rid of \n character left in the stream
+        keyboard.nextLine();
+        // prompt user and get a file path
+        System.out.println("Please enter the file path to save the game.");
+        String filePath = keyboard.nextLine();
+        // call the getSavedGame( ) method in the GameControl class to load the game
+        GameControl theGame = new GameControl();
+        theGame.setSavedGame(filePath);
+        // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
         }
 }

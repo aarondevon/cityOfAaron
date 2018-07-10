@@ -14,7 +14,7 @@ public class GameMenuView extends MenuView {
    public GameMenuView() {
         super("\n" +
             "**********************************\n" +
-            "* CITY OF AARON: NEW GAME MENU *\n" +
+            "* CITY OF AARON: GAME MENU *\n" +
             "**********************************\n" +
             " 1 - View the map\n" +
             " 2 - View/Print a list\n" +
