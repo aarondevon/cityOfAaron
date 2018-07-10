@@ -312,7 +312,7 @@ public class GameControl {
                 out.printf("%n%-20s%10s", "Provision Type", "Quantity");
                 out.printf("%n%-20s%10s", "___________", "________");
                 
-            // Print animal type and quantity    
+            // Print provision type and quantity    
             for (ListItem provision: theGame.getProvisions()) {
                 out.printf("%n%-20s%7d",provision.getName(), provision.getNumber());
         }
@@ -334,6 +334,22 @@ public class GameControl {
         for (ListItem team: theGame.getTeam()) {
             System.out.println(team.getName());
         }  
+    }
+    
+    public void saveTeamList(String filePath) {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+                out.println("\n\nTeam List Report");
+                out.printf("%n%-40s", "Team Members");
+                out.printf("%n%-40s", "____________");
+                
+            // Print tea, type and     
+            for (ListItem team: theGame.getTeam()) {
+                out.printf("%n%-40s",team.getName());
+        }
+            }
+            catch(Exception e) {
+                System.out.println("There was an error saving the list\n");
+            }
     }
     
     /**

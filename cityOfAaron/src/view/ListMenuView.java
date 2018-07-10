@@ -102,7 +102,18 @@ public class ListMenuView extends MenuView {
     
     public void listTeam() {
         GameControl theGameControl = new GameControl();
+        keyboard.nextLine();
+        System.out.println("Would you like to display or save the list");
+        System.out.println("Enter 1 to display the list or enter any key to save the list");
+        String saveOrDisplay = keyboard.next();
         
-        theGameControl.displayTeamList();
+        if (saveOrDisplay.equals("1")) {
+            theGameControl.displayTeamList();
+        } else {
+            System.out.println("Please enter the file path.");
+            keyboard.nextLine();
+            String filePath = keyboard.nextLine();
+            theGameControl.saveTeamList(filePath);
+        }
     }
 }
