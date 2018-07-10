@@ -8,6 +8,7 @@ import view.*;
 import control.*;
 import model.*;
 import cityofaaron.CityOfAaron;
+
 /**
  *
  * @author awesome
@@ -28,7 +29,7 @@ public class ListMenuView extends MenuView {
     
     @Override public void doAction(int option) {
             switch (option) {
-                case 1: // if the option is 1, call startNewGame( )
+                case 1: // Display listAnimals()
                     listAnimals();
                     break;
                 case 2: // if the option is 2, call startExistingGame( )
@@ -46,16 +47,39 @@ public class ListMenuView extends MenuView {
         }
     
     public void listAnimals() {
+        keyboard.nextLine();
+        System.out.println("Would you like to display or save the list");
+        System.out.println("Enter 1 to display the list or enter any key to save the list");
+        String saveOrDisplay = keyboard.next();
+        
         GameControl theGameControl = new GameControl();
         
-        theGameControl.displayAnimalList();
-        
+        if (saveOrDisplay.equals("1")) {
+            theGameControl.displayAnimalList();
+        } else {
+            System.out.println("Please enter the file path.");
+            keyboard.nextLine();
+            String filePath = keyboard.nextLine();
+            theGameControl.saveAnimalList(filePath);
+        }
     }
     
     public void listTools() {
         GameControl theGameControl = new GameControl();
         
-        theGameControl.displayToolList();
+        keyboard.nextLine();
+        System.out.println("Would you like to display or save the list");
+        System.out.println("Enter 1 to display the list or enter any key to save the list");
+        String saveOrDisplay = keyboard.next();
+        
+        if (saveOrDisplay.equals("1")) {
+            theGameControl.displayToolList();
+        } else {
+            System.out.println("Please enter the file path.");
+            keyboard.nextLine();
+            String filePath = keyboard.nextLine();
+            theGameControl.saveToolList(filePath);
+        }
     }
     
     public void listProvisions() {

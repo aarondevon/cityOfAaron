@@ -11,11 +11,14 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
 /**
  *
  * @author awesome
  */
 public class GameControl {
+    Scanner keyboard = new Scanner(System.in);
     // size of the Locations array
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 8;
@@ -228,7 +231,23 @@ public class GameControl {
     public void displayAnimalList() {
         for (ListItem animal : theGame.getAnimals()) {
             System.out.println(animal.getName() + ": " + animal.getNumber());
-        }  
+        }   
+    }
+    
+    public void saveAnimalList(String filePath) {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+                out.println("\n\n Animal List Report");
+                out.printf("%n%-20s%10s", "Animal Type", "Quantity");
+                out.printf("%n%-20s%10s", "___________", "________");
+                
+            // Print animal type and quantity    
+            for (ListItem animal : theGame.getAnimals()) {
+                out.printf("%n%-20s%7d",animal.getName(), animal.getNumber());
+        }
+            }
+            catch(Exception e) {
+                System.out.println("There was an error saving the list\n");
+            }
     }
     
     public static void createToolList() {
@@ -247,6 +266,22 @@ public class GameControl {
         for (ListItem tool: theGame.getTools()) {
             System.out.println(tool.getName() + ": " + tool.getNumber());
         }  
+    }
+    
+    public void saveToolList(String filePath) {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+                out.println("\n\n Tool List Report");
+                out.printf("%n%-20s%10s", "Tool Type", "Quantity");
+                out.printf("%n%-20s%10s", "___________", "________");
+                
+            // Print animal type and quantity    
+            for (ListItem tool: theGame.getTools()) {
+                out.printf("%n%-20s%7d",tool.getName(), tool.getNumber());
+        }
+            }
+            catch(Exception e) {
+                System.out.println("There was an error saving the list\n");
+            }
     }
     
     public static void createProvisionList() {
