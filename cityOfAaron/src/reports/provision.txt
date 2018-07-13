@@ -1,0 +1,12 @@
+
+
+ Provision List Report
+
+Provision Type        Quantity
+___________           ________
+dried beef               75
+salted pork             100
+wheat                  2700
+butter                   40
+cheese                   30
+bacon                    50

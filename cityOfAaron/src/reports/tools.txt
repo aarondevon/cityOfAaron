@@ -1,0 +1,12 @@
+
+
+ Tool List Report
+
+Tool Type             Quantity
+___________           ________
+hoes                    500
+rakes                   200
+pitchforks              150
+scythe                   50
+sickle                  100
+subsoil plow             75

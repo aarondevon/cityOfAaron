@@ -1,0 +1,12 @@
+
+
+ Animal List Report
+
+Animal Type           Quantity
+___________           ________
+dolphins                 30
+alicorn                   5
+cows                     12
+horses                    3
+pigs                      7
+goats                     4
