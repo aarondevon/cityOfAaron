@@ -144,6 +144,13 @@ public class CropView {
         } while(paramsNotOkay); 
     }
     
+    public static void cropReportView() {
+        System.out.println("Year: " + cropData.getYear());
+        System.out.println("Acres Owened: " + cropData.getAcresOwned());
+        System.out.println("Population: " + cropData.getPopulation());
+        System.out.println("Wheat in Store: " + cropData.getWheatInStore());
+    }
+    
     /**
     * The runCropsView method()
     * Purpose: runs the CityOfAaron game
@@ -151,9 +158,15 @@ public class CropView {
     * Returns: none
     */
     public static void runCropsView() {
+        // call cropReport View
+        cropReportView();
         // call the buyLandView() method
         buyLandView();
         // add calls to the other crop view methods
         // as they are written
+        sellLandView();
+        plantCropsView();
+        setOfferingView();
+        feedPeopleView();
     }
 }
