@@ -213,6 +213,14 @@ public class GameControl {
             }
             System.out.println();
         }   
+        System.out.println("\n||| is for the wall separating us from the Lamanites."
+                + "\n=== is for the scorching hot desert that deters invasion."
+                + "\n$$$ is where the Court is, and holds the seat of the City's ruler."
+                + "\n### is for the granery where we store our bushels of wheat."
+                + "\n^^^ is the village, where our good people live and work."
+                + "\n??? is for the fertile lands. We are unsure what to plant there yet."
+                + "\n!!! is for the wheat fields, where amber waves of grain wave."
+                + "\n~~~ is the wide river that marks our furthest eastern border.");
     }
     
     public static void createAnimalList() {
